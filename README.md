@@ -1,3 +1,3 @@
-# Lab 2 - Starter
+# Lab 3
 
-Part1: https://alkane7.github.io/Lab2_Starter/
+url: https://alkane7.github.io/sp25-cse110-lab3/
