@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* defining whole bg and color */
+:root {
+    --main-bg: #fdf6e3;
+    --accent-color: oklch(0.75 0.20 190);
+    --text-color: hsl(210, 50%, 20%);
+    --fallback-color: orange;
+    --safe-color: var(--text-color, var(--fallback-color));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--safe-color);
+    margin: 1rem;
+    padding: 1rem;
+}
+
+header h1 {
+    color: color-mix(in srgb, orange 70%, red 30%);
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(255, 165, 0, 0.2);
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    border: 2px dashed #ffa500;
+}
+
+section {
+    margin: 2em 0;
+    padding: 1em;
+    border: 1px solid #aaa;
+    border-radius: 0.5em;
+}
+
+h2 {
+/* color: hsla(210, 100%, 50%, 1); */
+    color: color(display-p3 1 0.4 0.2 / 0.9);
+    text-decoration: underline;
+}
+
+h3 {
+    color: rgb(80, 40, 40);
+}
+
+p:hover {
+    background-color: #ffffcc;
+}
+
+a:active {
+    color: hsla(210, 100%, 50%, 1);
+}
+
+form {
+    background-color: #fff8dc;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+input[type="text"] {
+    width: 50%;
+}
+
+button:hover {
+    background-color: orange;
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer {
+    margin: 10px 5px 10px 5px;
+}
+
+fieldset {
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+section#form {
+    padding: 20px 10px 10px 10px;
+}
+
+img {
+    border-style: solid;
+    border-color: #888;
+    border-width: 2px;
+    height: 2in;             
+    margin-right: 1cm;      
+}
+
+img, video {
+    display: inline-block;
+    max-width: 100%;
+}
+
+header {
+    position: relative;
+}
+
+nav {
+    position: relative;
+}
+
+
+video {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    min-width: 200px;
+}
+
+
+nav {
+    display: flex;
+    gap: 1em;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+
+section#agenda {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1em;
+}
+
+
+li[class] {
+font-style: italic;
+}
+
+#attendance li {
+font-weight: bold;
+}
+
+div > span {
+color: blue;
+}
+
+img + p {
+font-size: 1.1em;
+}
+
+p ~ details {
+font-style: italic;
+}
+
+section > h2:hover {
+color: teal;
+}
+
+section:has(video) {
+border-color: teal;
+}
+
+details {
+    display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.1rem; 
+    }
+
+    form {
+        font-size: 1rem;  
+    }
+  
+    section, form, img, video {
+      width: 100%;
+      padding: 0.5em;
+    }
+  
+    h1, h2, h3 {
+      text-align: center;
+      font-size: 1.2em;
+    }
+  
+    .grid-agenda {
+      grid-template-columns: 1fr;
+    }
+}
+  
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 1.1rem; 
+    }
+  
+    form {
+      font-size: 1rem; 
+    }
+
+    .grid-agenda {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    img, video {
+        max-width: 90%;
+    }
+}
+  
