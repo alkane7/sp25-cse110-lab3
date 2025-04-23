@@ -114,7 +114,7 @@ header {
 }
 
 nav {
-    position: relative;
+    position: static;
 }
 
 
